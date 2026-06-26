@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ホームサクセスアカデミー｜現役フリーランス講師から学ぶ、稼ぐためのWebスキル</title>
 <meta name="description" content="現役フリーランス講師が作った、稼ぐことに特化したWebスキルスクール。主婦・子育て中の方、副業したい会社員向け。Webライティング・デザイン・SNS運用・ネット基礎をテキスト教材で学べます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* ─── Reset ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -14,6 +17,7 @@ body{
   color:#1a1a2e;line-height:1.85;background:#fff;
   -webkit-font-smoothing:antialiased;
 }
+h1,h2,h3,.logo{font-family:'Klee One','Hiragino Kaku Gothic ProN',sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
@@ -431,6 +435,76 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 .foot-links{display:flex;gap:32px;flex-wrap:wrap}
 .foot-links a:hover{color:#fff}
 .copy{margin-top:28px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.28)}
+
+/* ════ MOBILE ════ */
+.sp-hide{display:block}
+
+@media(max-width:680px){
+  .sp-hide{display:none}
+
+  .section{padding:64px 0}
+  h2.title{font-size:1.55rem}
+  .lead{font-size:.95rem}
+
+  /* Header */
+  .nav{height:60px}
+  .logo{font-size:.95rem}
+  .logo .mark{width:30px;height:30px;font-size:.82rem}
+  .nav .btn{padding:8px 16px;font-size:.82rem}
+
+  /* Hero */
+  .hero-inner{padding:52px 0 64px;gap:28px}
+  .hero h1{font-size:1.9rem}
+  .hero-badges{gap:7px}
+  .badge{font-size:.75rem;padding:6px 11px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{text-align:center;padding:16px 24px}
+
+  /* Pain */
+  .pain-item{grid-template-columns:44px 1fr;gap:16px;padding:28px 0}
+  .pain-no{font-size:2.2rem}
+  .pain-text h3{font-size:1.05rem}
+  .pain-close{padding:30px 20px}
+  .pain-close p{font-size:1rem}
+
+  /* Inst */
+  .inst-pt{padding:18px 0}
+  .inst-pt .ic{font-size:1.3rem}
+  .inst-pt strong{font-size:.95rem}
+
+  /* Skills */
+  .skill-item{grid-template-columns:52px 1fr;gap:16px;padding:32px 0}
+  .skill-num{font-size:2.8rem}
+  .skill-content h3{font-size:1.15rem}
+
+  /* Reasons */
+  .reason-item{gap:18px;padding:28px 0}
+  .reason-ic{width:52px;height:52px;font-size:1.8rem;border-radius:14px}
+  .reason-body h3{font-size:1rem}
+
+  /* Steps */
+  .steps-flow{grid-template-columns:1fr 1fr;gap:28px}
+  .step-dot{width:46px;height:46px;font-size:1rem}
+  .step-col h3{font-size:.95rem}
+
+  /* Plans */
+  .plans{gap:18px}
+  .plan{padding:28px 22px}
+  .plan.pop{transform:none}
+  .plan .price{font-size:1.8rem}
+  .btn-outline{padding:13px}
+
+  /* FAQ */
+  summary{font-size:.95rem;padding:16px 30px 16px 0}
+  details p{font-size:.9rem}
+
+  /* CTA */
+  .cta-sec h2{font-size:1.55rem}
+  .btn-white{padding:16px 32px;font-size:.97rem}
+
+  /* Footer */
+  .foot-links{gap:18px;font-size:.85rem}
+}
 </style>
 </head>
 <body>
@@ -465,12 +539,12 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
         <span class="badge">🔰 初心者・未経験歓迎</span>
       </div>
       <h1>"稼げる"を、<br><span class="hl">現役プロから</span>学ぶ。</h1>
-      <p class="sub">教えるのが本業の先生ではなく、いま実際にWebで稼いでいるフリーランスが作った、「稼ぐこと」に特化したカリキュラム。子育ての合間に、本業のあとに、自分のペースで。</p>
+      <p class="sub sp-hide">教えるのが本業の先生ではなく、いま実際にWebで稼いでいるフリーランスが作った、「稼ぐこと」に特化したカリキュラム。子育ての合間に、本業のあとに、自分のペースで。</p>
       <div class="hero-cta">
         <a href="#cta" class="btn">無料説明会に申し込む</a>
         <a href="#concept" class="btn btn-ghost-light">カリキュラムを見る</a>
       </div>
-      <p class="hero-note">※ パソコンが苦手でも大丈夫。基礎の「キ」からサポートします。</p>
+      <p class="hero-note sp-hide">※ パソコンが苦手でも大丈夫。基礎の「キ」からサポートします。</p>
     </div>
     <div class="reveal d2">
       <div class="ph hero-visual" data-label="① ヒーロー画像（hero.jpg）">
@@ -491,21 +565,21 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
       <div class="pain-no">01</div>
       <div class="pain-text">
         <h3>何から始めればいいか分からない</h3>
-        <p>在宅ワークに興味はあるけど、パソコンも得意じゃない。「自分にできるかな」と思うと、なかなか踏み出せないまま。</p>
+        <p class="sp-hide">在宅ワークに興味はあるけど、パソコンも得意じゃない。「自分にできるかな」と思うと、なかなか踏み出せないまま。</p>
       </div>
     </div>
     <div class="pain-item reveal d1">
       <div class="pain-no">02</div>
       <div class="pain-text">
         <h3>スクールって高くない？元が取れるか不安</h3>
-        <p>払った分、ちゃんと回収できるのか。子育て中や副業の立ち上げ期に、大きなお金を出すのはリスクを感じる。</p>
+        <p class="sp-hide">払った分、ちゃんと回収できるのか。子育て中や副業の立ち上げ期に、大きなお金を出すのはリスクを感じる。</p>
       </div>
     </div>
     <div class="pain-item reveal d1">
       <div class="pain-no">03</div>
       <div class="pain-text">
         <h3>教材を買っても、結局使わないんじゃ…</h3>
-        <p>今まで買いっぱなしで終わったものが何個もある。学んでも稼げないまま終わるんじゃないかという不安。</p>
+        <p class="sp-hide">今まで買いっぱなしで終わったものが何個もある。学んでも稼げないまま終わるんじゃないかという不安。</p>
       </div>
     </div>
   </div>
@@ -530,9 +604,9 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
         </div>
       </div>
       <div class="inst-body reveal d2">
-        <p>多くのスクールの教材は「教えるのが上手な人」が作っています。でも、それで本当に稼げるとは限りません。</p>
+        <p class="sp-hide">多くのスクールの教材は「教えるのが上手な人」が作っています。でも、それで本当に稼げるとは限りません。</p>
         <p>ホームサクセスアカデミーのカリキュラムは、<strong>いま現役でWebの仕事を受注し、収入を得ているフリーランス講師</strong>が作りました。</p>
-        <p>きれいごとではなく「実際に案件を取るには」「単価を上げるには」という、現場で通用するノウハウだけをお届けします。</p>
+        <p class="sp-hide">きれいごとではなく「実際に案件を取るには」「単価を上げるには」という、現場で通用するノウハウだけをお届けします。</p>
         <div class="inst-pts">
           <div class="inst-pt">
             <span class="ic">💴</span>
@@ -566,14 +640,14 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
   <div class="wrap center reveal">
     <span class="eyebrow">CURRICULUM</span>
     <h2 class="title">在宅で稼げる、<span class="grad-text">4つのWebスキル</span></h2>
-    <p class="lead">需要が高く、在宅で仕事につなげやすいスキルを厳選。興味のある分野から、自分のペースで学べます。</p>
+    <p class="lead sp-hide">需要が高く、在宅で仕事につなげやすいスキルを厳選。興味のある分野から、自分のペースで学べます。</p>
   </div>
   <div class="wrap skills-list">
     <div class="skill-item reveal">
       <div class="skill-num">01</div>
       <div class="skill-content">
         <h3><span class="emo">✍️</span>Webライティング</h3>
-        <p>文章を書く力をお金に変える。記事作成・SEO・セールス文章まで。道具がいらず、最初の一歩に最適です。</p>
+        <p class="sp-hide">文章を書く力をお金に変える。記事作成・SEO・セールス文章まで。道具がいらず、最初の一歩に最適です。</p>
         <div class="tags">
           <span class="tag">記事作成</span><span class="tag">SEOの基礎</span>
           <span class="tag">セールスライティング</span><span class="tag">取材・構成</span>
@@ -584,7 +658,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
       <div class="skill-num">02</div>
       <div class="skill-content">
         <h3><span class="emo">🎨</span>Webデザイン／制作</h3>
-        <p>バナー・LP・簡単なサイト制作まで。「伝わる」を形にする力。ツールの使い方からていねいに。</p>
+        <p class="sp-hide">バナー・LP・簡単なサイト制作まで。「伝わる」を形にする力。ツールの使い方からていねいに。</p>
         <div class="tags">
           <span class="tag">バナー制作</span><span class="tag">LP制作</span>
           <span class="tag">Canva等のツール</span><span class="tag">ノーコード</span>
@@ -595,7 +669,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
       <div class="skill-num">03</div>
       <div class="skill-content">
         <h3><span class="emo">📣</span>SNS運用・マーケ</h3>
-        <p>Instagram・Xの運用代行、集客の仕組みづくり。日常で使うSNSが、そのまま仕事になります。</p>
+        <p class="sp-hide">Instagram・Xの運用代行、集客の仕組みづくり。日常で使うSNSが、そのまま仕事になります。</p>
         <div class="tags">
           <span class="tag">Instagram運用</span><span class="tag">投稿づくり</span>
           <span class="tag">集客の基礎</span><span class="tag">運用代行</span>
@@ -606,7 +680,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
       <div class="skill-num">04</div>
       <div class="skill-content">
         <h3><span class="emo">🧭</span>ネット基礎・総合</h3>
-        <p>PC操作・便利ツール・在宅ワークの始め方まで。「そもそも」の不安を解消する、すべての土台。</p>
+        <p class="sp-hide">PC操作・便利ツール・在宅ワークの始め方まで。「そもそも」の不安を解消する、すべての土台。</p>
         <div class="tags">
           <span class="tag">PC・ツール基礎</span><span class="tag">在宅ワーク入門</span>
           <span class="tag">仕事の受け方</span><span class="tag">セキュリティ</span>
@@ -652,7 +726,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
   <div class="wrap center reveal">
     <span class="eyebrow eyebrow-ora">HOW IT WORKS</span>
     <h2 class="title">学びの流れ</h2>
-    <p class="lead">申し込みから収入につながるまで、4ステップ。むずかしいことはありません。</p>
+    <p class="lead sp-hide">申し込みから収入につながるまで、4ステップ。むずかしいことはありません。</p>
   </div>
   <div class="wrap">
     <div class="steps-flow">
@@ -685,7 +759,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
   <div class="wrap center reveal">
     <span class="eyebrow">PRICE</span>
     <h2 class="title">料金プラン</h2>
-    <p class="lead">「高いんでしょ？」——だからこそ、回収できる学びを。まずは無料説明会で、あなたに合うプランをご提案します。</p>
+    <p class="lead sp-hide">「高いんでしょ？」——だからこそ、回収できる学びを。まずは無料説明会で、あなたに合うプランをご提案します。</p>
   </div>
   <div class="wrap">
     <div class="plans">
@@ -770,7 +844,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <section class="section cta-sec" id="cta">
   <div class="wrap reveal">
     <h2>「いつか」を「今日」に。<br>はじめの一歩を、ここから。</h2>
-    <p>まずは無料説明会で、あなたの「やってみたい」を聞かせてください。<br>しつこい勧誘はありません。安心してお申し込みください。</p>
+    <p class="sp-hide">まずは無料説明会で、あなたの「やってみたい」を聞かせてください。<br>しつこい勧誘はありません。安心してお申し込みください。</p>
     <a href="#" class="btn btn-white">無料説明会に申し込む</a>
   </div>
 </section>
