@@ -256,6 +256,75 @@ header{
 .inst-pt span{font-size:.9rem;color:var(--muted)}
 @media(max-width:860px){.inst-grid{grid-template-columns:1fr;gap:36px}}
 
+/* ── Concept redesign ── */
+.concept-header{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:32px;
+  margin-bottom:44px;
+}
+.concept-lead{
+  color:#555;font-size:1rem;margin-top:14px;
+  max-width:600px;line-height:1.85;
+}
+.concept-portrait{
+  flex-shrink:0;
+  width:110px;height:110px;
+  border-radius:50%;
+  border:3px solid #c4b5fd;
+  box-shadow:0 8px 24px rgba(124,58,237,.2);
+  font-size:.65rem;
+}
+.concept-portrait img{border-radius:50%}
+
+/* VS 比較図 */
+.vs-wrap{
+  display:grid;
+  grid-template-columns:1fr 52px 1fr;
+  border-radius:24px;overflow:hidden;
+  box-shadow:0 12px 48px rgba(0,0,0,.1);
+}
+.vs-bad{background:#f4f4f4;padding:36px 32px}
+.vs-good{background:var(--ghost);padding:36px 32px}
+.vs-center{
+  background:var(--ga);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:900;font-size:.9rem;
+  writing-mode:vertical-rl;letter-spacing:.2em;
+}
+.vs-head{
+  font-size:.78rem;font-weight:900;letter-spacing:.12em;
+  text-transform:uppercase;padding-bottom:16px;
+  margin-bottom:22px;border-bottom:2px solid rgba(0,0,0,.08);
+  color:#aaa;
+}
+.vs-good .vs-head{
+  border-bottom-color:rgba(255,255,255,.15);
+  color:rgba(255,255,255,.5);
+}
+.vs-row{
+  display:flex;gap:12px;align-items:flex-start;
+  margin-bottom:20px;font-size:.93rem;line-height:1.7;
+}
+.vs-row:last-child{margin-bottom:0}
+.vs-row strong{display:block;margin-bottom:3px}
+.vs-x{color:#ccc;font-weight:900;font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.vs-check{
+  background:var(--gb);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;font-weight:900;font-size:1.1rem;
+  flex-shrink:0;margin-top:2px;
+}
+.vs-bad .vs-row strong{color:#888}
+.vs-bad .vs-row span{color:#aaa;font-size:.88rem}
+.vs-good .vs-row strong{color:#fff}
+.vs-good .vs-row span{color:rgba(255,255,255,.65);font-size:.88rem}
+@media(max-width:680px){
+  .vs-wrap{grid-template-columns:1fr;border-radius:16px}
+  .vs-center{writing-mode:horizontal-tb;padding:14px;font-size:.85rem;letter-spacing:.3em}
+  .concept-header{flex-direction:column-reverse;align-items:flex-start;gap:20px}
+  .concept-portrait{width:80px;height:80px}
+}
+
 /* ════ SKILLS ════ */
 .skills-sec{background:#fff}
 .skills-list{margin-top:60px;display:grid;gap:0}
@@ -644,48 +713,57 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
   </div>
 </section>
 
-<!-- ══ CONCEPT / INSTRUCTOR ══ -->
+<!-- ══ CONCEPT ══ -->
 <section class="section inst-sec" id="concept">
   <div class="wrap">
-    <div class="reveal center">
-      <span class="eyebrow">OUR CONCEPT</span>
-      <h2 class="title">現役フリーランスが監修した、<br><span class="grad-text">無駄ゼロのカリキュラム</span></h2>
-    </div>
-    <div class="inst-grid">
-      <div class="reveal">
-        <div class="ph inst-visual" data-label="③ 講師画像（instructor.jpg）">
-          <img src="images/instructor.jpg" alt="現役フリーランス講師">
-        </div>
+
+    <!-- タイトル＋講師写真 -->
+    <div class="concept-header reveal">
+      <div>
+        <span class="eyebrow">OUR CONCEPT</span>
+        <h2 class="title">現役フリーランスが監修した、<br><span class="grad-text">無駄ゼロのカリキュラム</span></h2>
+        <p class="concept-lead">実際に稼いでいる現役フリーランスが自ら設計。その人に合った必要なスキルだけを、今のトレンドで届けます。</p>
       </div>
-      <div class="inst-body reveal d2">
-        <p class="sp-hide">世の中のスクール教材の多くは、教えるのが仕事の人が作ったものです。でも、教えるのがうまいことと、稼げることはイコールではありません。</p>
-        <p>このカリキュラムは、<strong>現役フリーランスが自ら監修・設計</strong>しました。今の市場で実際に通用するスキルだけを選び抜いています。</p>
-        <p class="sp-hide">多くのスクール教材で教えていることは、今やほとんどAIで代替できます。だからこそここでは、<strong>AIをいかにうまく使いこなすか</strong>を中心に、無駄を一切省いた内容に絞っています。</p>
-        <div class="inst-pts">
-          <div class="inst-pt">
-            <span class="ic"></span>
-            <div>
-              <strong>その人に合わせた、合理的な学習設計</strong>
-              <span>何を学べば一番効率よく稼げるかを判断し、必要な教材だけに絞る。</span>
-            </div>
-          </div>
-          <div class="inst-pt">
-            <span class="ic"></span>
-            <div>
-              <strong>今のトレンドを反映したコンテンツ</strong>
-              <span>古い手法は教えない。市場の流れを常にキャッチしているから、今通用するスキルだけを届けられる。</span>
-            </div>
-          </div>
-          <div class="inst-pt">
-            <span class="ic"></span>
-            <div>
-              <strong>AIをうまく使いこなすことが武器になる</strong>
-              <span>多くの作業はAIで代替できる時代。それを恐れるのではなく、使いこなす側になる方法を学ぶ。</span>
-            </div>
-          </div>
-        </div>
+      <div class="concept-portrait ph" data-label="講師写真">
+        <img src="images/instructor.jpg" alt="講師">
       </div>
     </div>
+
+    <!-- 比較図 -->
+    <div class="vs-wrap reveal">
+      <div class="vs-bad">
+        <p class="vs-head">よくあるスクール</p>
+        <div class="vs-row">
+          <span class="vs-x">✗</span>
+          <div><strong>教えることが仕事の人が設計</strong><br><span>稼げることとは別の話。的外れな教材が生まれやすい。</span></div>
+        </div>
+        <div class="vs-row">
+          <span class="vs-x">✗</span>
+          <div><strong>古い・的外れな内容が多い</strong><br><span>市場の変化に追いつけず、今は通用しないスキルを教えている。</span></div>
+        </div>
+        <div class="vs-row">
+          <span class="vs-x">✗</span>
+          <div><strong>AIで代替できる作業を教える</strong><br><span>今やAIが一瞬でこなせることを、時間をかけて学んでいる。</span></div>
+        </div>
+      </div>
+      <div class="vs-center">VS</div>
+      <div class="vs-good">
+        <p class="vs-head">ホームサクセスアカデミー</p>
+        <div class="vs-row">
+          <span class="vs-check">✓</span>
+          <div><strong>現役フリーランスが自ら監修・設計</strong><br><span>実際に稼いでいるから、本当に必要なことだけに絞れる。</span></div>
+        </div>
+        <div class="vs-row">
+          <span class="vs-check">✓</span>
+          <div><strong>今のトレンドをリアルタイム反映</strong><br><span>市場の流れを常にキャッチ。今この瞬間に通用するスキルを。</span></div>
+        </div>
+        <div class="vs-row">
+          <span class="vs-check">✓</span>
+          <div><strong>AIを武器にする使い方を学ぶ</strong><br><span>AIを恐れるのではなく、使いこなす側になる。それが最速の近道。</span></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
