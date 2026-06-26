@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホームサクセスアカデミー｜現役フリーランス講師から学ぶ、稼ぐためのWebスキル</title>
+<meta name="description" content="現役フリーランス講師が作った、稼ぐことに特化したWebスキルスクール。主婦・子育て中の方、副業したい会社員向け。Webライティング・デザイン・SNS運用・ネット基礎をテキスト教材で学べます。">
+<style>
+/* ─── Reset ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP',sans-serif;
+  color:#1a1a2e;line-height:1.85;background:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* ─── Tokens ─── */
+:root{
+  --pur:#7c3aed;--pur-l:#a78bfa;--pur-d:#5b21b6;
+  --ora:#f97316;--ora-d:#ea580c;
+  --blu:#3b82f6;--teal:#06b6d4;
+  --dark:#0f0e17;--dark2:#1a1a2e;
+  --muted:#6b7280;--line:#e5e7eb;
+  --ga:linear-gradient(135deg,#7c3aed,#3b82f6);
+  --gb:linear-gradient(135deg,#f97316,#ec4899);
+  --gc:linear-gradient(135deg,#06b6d4,#7c3aed);
+  --ghost:linear-gradient(145deg,#0f0c29,#302b63 55%,#1a1740);
+}
+
+/* ─── Layout ─── */
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.center{text-align:center}
+
+/* ─── Typography ─── */
+.eyebrow{
+  display:inline-block;font-size:.75rem;font-weight:800;
+  letter-spacing:.2em;background:var(--ga);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:18px;
+}
+.eyebrow-ora{background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+h2.title{font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.3;font-weight:900;margin-bottom:18px}
+.grad-text{background:var(--ga);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-ora{background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lead{color:var(--muted);font-size:1.05rem;max-width:660px}
+.center .lead{margin:0 auto}
+
+/* ─── Buttons ─── */
+.btn{
+  display:inline-block;
+  background:var(--gb);color:#fff;
+  font-weight:800;padding:18px 42px;
+  border-radius:999px;font-size:1rem;letter-spacing:.04em;
+  box-shadow:0 8px 28px rgba(249,115,22,.4);
+  transition:transform .2s,box-shadow .2s,filter .2s;
+  position:relative;
+}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 14px 36px rgba(249,115,22,.5)}
+.btn-pur{background:var(--ga);box-shadow:0 8px 28px rgba(124,58,237,.4)}
+.btn-pur:hover{box-shadow:0 14px 36px rgba(124,58,237,.5)}
+.btn-white{background:#fff;color:var(--pur);box-shadow:0 8px 28px rgba(0,0,0,.15)}
+.btn-white:hover{box-shadow:0 14px 36px rgba(0,0,0,.22);color:var(--ora-d)}
+.btn-ghost-light{
+  background:transparent;color:#fff;
+  border:2px solid rgba(255,255,255,.45);
+  box-shadow:none;
+}
+.btn-ghost-light:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8);box-shadow:none;filter:none}
+
+/* ─── Image placeholder ─── */
+.ph{
+  position:relative;
+  background:linear-gradient(135deg,#ede9fe,#dbeafe);
+  border-radius:20px;overflow:hidden;
+}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph::after{
+  content:attr(data-label);position:absolute;inset:0;
+  display:grid;place-items:center;
+  color:#9f67ff;font-size:.85rem;font-weight:700;
+  text-align:center;padding:20px;pointer-events:none;
+}
+.ph img[src]{position:relative;z-index:1}
+.ph:has(img[src]:not([src=""]))::after{display:none}
+
+/* ─── Scroll reveal ─── */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ════ HEADER ════ */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(15,14,23,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:#fff;font-size:1.05rem}
+.logo .mark{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--ga);
+  display:grid;place-items:center;color:#fff;font-size:.95rem;font-weight:900;
+  box-shadow:0 4px 14px rgba(124,58,237,.5);
+}
+.nav-links{display:flex;gap:26px;align-items:center;font-size:.9rem;font-weight:700;color:rgba(255,255,255,.75)}
+.nav-links a:not(.btn):hover{color:#fff}
+.nav .btn{padding:10px 22px;font-size:.88rem}
+@media(max-width:860px){.nav-links a:not(.btn){display:none}}
+
+/* ════ HERO ════ */
+.hero{
+  background:var(--ghost);
+  overflow:hidden;position:relative;
+}
+.blob{
+  position:absolute;border-radius:50%;
+  filter:blur(90px);pointer-events:none;
+}
+.blob-1{width:560px;height:560px;background:radial-gradient(circle,rgba(124,58,237,.4),transparent);top:-140px;left:-100px}
+.blob-2{width:420px;height:420px;background:radial-gradient(circle,rgba(249,115,22,.35),transparent);bottom:-100px;right:-80px}
+.blob-3{width:300px;height:300px;background:radial-gradient(circle,rgba(6,182,212,.3),transparent);top:40%;right:15%}
+.hero-inner{
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:56px;align-items:center;
+  padding:96px 0 110px;
+  position:relative;z-index:1;
+}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.badge{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;padding:7px 16px;
+  font-size:.82rem;font-weight:700;color:#fff;
+  backdrop-filter:blur(8px);
+}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.28;color:#fff;font-weight:900}
+.hero h1 .hl{background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p.sub{margin:26px 0 36px;font-size:1.1rem;color:rgba(255,255,255,.78);max-width:520px;line-height:1.9}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-note{margin-top:20px;font-size:.84rem;color:rgba(255,255,255,.45)}
+.hero-visual{aspect-ratio:4/3;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr;gap:36px;padding:60px 0 72px}
+}
+
+/* ════ PAIN ════ */
+.pain-sec{background:#fff}
+.pain-statement{margin-top:60px}
+.pain-item{
+  padding:40px 0;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;
+}
+.pain-item:first-child{border-top:1px solid var(--line)}
+.pain-no{
+  font-size:3.5rem;font-weight:900;line-height:1;
+  background:var(--ga);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.pain-item:nth-child(2) .pain-no{background:var(--gb);-webkit-background-clip:text;background-clip:text}
+.pain-item:nth-child(3) .pain-no{background:var(--gc);-webkit-background-clip:text;background-clip:text}
+.pain-text h3{font-size:1.25rem;font-weight:800;color:#1a1a2e;margin-bottom:10px}
+.pain-text p{color:var(--muted);font-size:.98rem}
+@media(max-width:680px){
+  .pain-item{grid-template-columns:50px 1fr;gap:20px}
+  .pain-no{font-size:2.5rem}
+}
+.pain-close{
+  margin-top:60px;padding:48px 40px;
+  background:var(--ghost);border-radius:24px;
+  text-align:center;color:#fff;
+  position:relative;overflow:hidden;
+}
+.pain-close::before{
+  content:'';position:absolute;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(124,58,237,.35),transparent);
+  top:-100px;right:-100px;
+}
+.pain-close p{
+  font-size:clamp(1.1rem,3vw,1.5rem);font-weight:800;
+  line-height:1.7;position:relative;z-index:1;
+}
+.pain-close .acc{background:var(--gb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ════ CONCEPT ════ */
+.inst-sec{background:#f8f7ff}
+.inst-grid{
+  display:grid;grid-template-columns:.9fr 1.1fr;
+  gap:60px;align-items:center;margin-top:56px;
+}
+.inst-visual{aspect-ratio:4/5;border-radius:24px;box-shadow:0 24px 64px rgba(124,58,237,.15)}
+.inst-body p{color:#444;font-size:1rem;margin-bottom:18px;line-height:1.9}
+.inst-pts{margin-top:28px;display:grid;gap:0}
+.inst-pt{
+  display:flex;gap:18px;align-items:flex-start;
+  padding:22px 0;border-bottom:1px solid #e8e4ff;
+}
+.inst-pt:first-child{border-top:1px solid #e8e4ff}
+.inst-pt .ic{font-size:1.6rem;flex-shrink:0;margin-top:2px}
+.inst-pt strong{display:block;font-size:1rem;color:#1a1a2e;margin-bottom:4px}
+.inst-pt span{font-size:.9rem;color:var(--muted)}
+@media(max-width:860px){.inst-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ════ SKILLS ════ */
+.skills-sec{background:#fff}
+.skills-list{margin-top:60px;display:grid;gap:0}
+.skill-item{
+  display:grid;grid-template-columns:100px 1fr;
+  gap:40px;align-items:start;
+  padding:44px 0;border-bottom:1px solid var(--line);
+}
+.skill-item:first-child{border-top:1px solid var(--line)}
+.skill-num{
+  font-size:4.5rem;font-weight:900;line-height:1;
+  background:var(--ga);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.skill-item:nth-child(2) .skill-num{background:var(--gb);-webkit-background-clip:text;background-clip:text}
+.skill-item:nth-child(3) .skill-num{background:var(--gc);-webkit-background-clip:text;background-clip:text}
+.skill-item:nth-child(4) .skill-num{background:linear-gradient(135deg,#10b981,#3b82f6);-webkit-background-clip:text;background-clip:text}
+.skill-content h3{
+  font-size:1.4rem;font-weight:900;color:#1a1a2e;
+  margin-bottom:12px;display:flex;align-items:center;gap:10px;
+}
+.emo{font-size:1.5rem}
+.skill-content p{color:#444;font-size:.97rem;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  border-radius:999px;padding:5px 14px;
+  font-size:.8rem;font-weight:700;
+  background:#f3f0ff;color:var(--pur);
+  border:1px solid #ddd6fe;
+}
+.skill-item:nth-child(2) .tag{background:#fff7ed;color:var(--ora-d);border-color:#fed7aa}
+.skill-item:nth-child(3) .tag{background:#ecfeff;color:#0891b2;border-color:#a5f3fc}
+.skill-item:nth-child(4) .tag{background:#ecfdf5;color:#059669;border-color:#a7f3d0}
+@media(max-width:680px){
+  .skill-item{grid-template-columns:60px 1fr;gap:20px}
+  .skill-num{font-size:3rem}
+}
+
+/* ════ REASONS ════ */
+.reasons-sec{background:#f8f7ff}
+.reasons-list{margin-top:60px;display:grid;gap:0}
+.reason-item{
+  display:flex;gap:32px;align-items:flex-start;
+  padding:40px 0;border-bottom:1px solid #e8e4ff;
+}
+.reason-item:first-child{border-top:1px solid #e8e4ff}
+.reason-ic{
+  font-size:2.4rem;flex-shrink:0;
+  width:64px;height:64px;display:grid;place-items:center;
+  border-radius:18px;
+}
+.reason-item:nth-child(1) .reason-ic{background:linear-gradient(135deg,#7c3aed,#3b82f6)}
+.reason-item:nth-child(2) .reason-ic{background:linear-gradient(135deg,#f97316,#ec4899)}
+.reason-item:nth-child(3) .reason-ic{background:linear-gradient(135deg,#06b6d4,#7c3aed)}
+.reason-body h3{font-size:1.15rem;font-weight:800;color:#1a1a2e;margin-bottom:8px}
+.reason-body p{font-size:.95rem;color:#555}
+@media(max-width:680px){.reason-item{flex-direction:column;gap:18px}}
+
+/* ════ STEPS ════ */
+.steps-sec{
+  background:var(--ghost);
+  position:relative;overflow:hidden;
+}
+.steps-sec::before{
+  content:'';position:absolute;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(249,115,22,.25),transparent);
+  bottom:-150px;left:-100px;pointer-events:none;
+}
+.steps-sec .title{color:#fff}
+.steps-sec .lead{color:rgba(255,255,255,.65)}
+.steps-sec .eyebrow{background:var(--gb);-webkit-background-clip:text;background-clip:text}
+.steps-flow{
+  margin-top:64px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;position:relative;z-index:1;
+}
+.steps-flow::before{
+  content:'';position:absolute;
+  top:28px;left:calc(12.5%);right:calc(12.5%);
+  height:2px;
+  background:linear-gradient(90deg,#7c3aed,#f97316,#06b6d4,#10b981);
+  opacity:.5;
+}
+.step-col{padding:0 16px;text-align:center}
+.step-dot{
+  width:56px;height:56px;border-radius:50%;
+  margin:0 auto 24px;
+  display:grid;place-items:center;
+  font-size:1.2rem;font-weight:900;color:#fff;
+  position:relative;z-index:1;
+  box-shadow:0 8px 22px rgba(0,0,0,.3);
+}
+.step-col:nth-child(1) .step-dot{background:var(--ga)}
+.step-col:nth-child(2) .step-dot{background:var(--gb)}
+.step-col:nth-child(3) .step-dot{background:var(--gc)}
+.step-col:nth-child(4) .step-dot{background:linear-gradient(135deg,#10b981,#3b82f6)}
+.step-col h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:10px}
+.step-col p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.75}
+@media(max-width:860px){
+  .steps-flow{grid-template-columns:1fr 1fr;gap:32px}
+  .steps-flow::before{display:none}
+}
+@media(max-width:500px){.steps-flow{grid-template-columns:1fr}}
+
+/* ════ PRICING ════ */
+.price-sec{background:#fff}
+.plans{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;margin-top:56px;align-items:start;
+}
+.plan{
+  border:2px solid var(--line);border-radius:24px;
+  padding:36px 28px;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.plan:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(124,58,237,.12);border-color:#c4b5fd}
+.plan.pop{
+  border:2px solid transparent;
+  background:linear-gradient(#fff,#fff) padding-box, var(--ga) border-box;
+  box-shadow:0 16px 50px rgba(124,58,237,.2);
+  position:relative;
+}
+.plan.pop::before{
+  content:"人気No.1";
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--ga);color:#fff;
+  font-size:.78rem;font-weight:900;
+  padding:5px 18px;border-radius:999px;
+  box-shadow:0 6px 16px rgba(124,58,237,.4);
+  white-space:nowrap;
+}
+.plan h3{font-size:1.2rem;font-weight:900;color:#1a1a2e;margin-bottom:8px}
+.plan.pop h3{background:var(--ga);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.plan .desc{font-size:.87rem;color:var(--muted);margin-bottom:18px;min-height:40px}
+.plan .price{font-size:2.2rem;font-weight:900;color:#1a1a2e;margin-bottom:4px}
+.plan.pop .price{background:var(--ga);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.plan .price small{font-size:.82rem;color:var(--muted);font-weight:600}
+.plan-divider{margin:18px 0;border:none;border-top:1px solid var(--line)}
+.plan ul{list-style:none;margin-bottom:28px}
+.plan li{
+  padding:9px 0 9px 26px;position:relative;
+  font-size:.91rem;color:#444;border-bottom:1px solid #f5f3ff;
+}
+.plan li:last-child{border-bottom:none}
+.plan li::before{
+  content:"✓";position:absolute;left:0;
+  background:var(--ga);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-weight:900;
+}
+.btn-outline{
+  display:block;text-align:center;
+  border:2px solid #ddd6fe;color:var(--pur);
+  font-weight:800;padding:15px;border-radius:999px;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.btn-outline:hover{background:var(--ga);color:#fff;border-color:transparent}
+.price-note{text-align:center;margin-top:24px;font-size:.84rem;color:var(--muted)}
+@media(max-width:860px){.plans{grid-template-columns:1fr}}
+
+/* ════ FAQ ════ */
+.faq-sec{background:#f8f7ff}
+.faq{max-width:760px;margin:52px auto 0}
+details{
+  background:#fff;border:2px solid #ede9fe;
+  border-radius:18px;margin-bottom:14px;padding:4px 24px;
+  transition:border-color .2s,box-shadow .2s;
+}
+details:hover{border-color:#c4b5fd;box-shadow:0 6px 24px rgba(124,58,237,.1)}
+summary{
+  cursor:pointer;font-weight:800;color:#1a1a2e;
+  padding:18px 34px 18px 0;
+  list-style:none;position:relative;font-size:1rem;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:2px;top:14px;
+  font-size:1.5rem;
+  background:var(--ga);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  transition:transform .22s;
+}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 20px;color:#555;font-size:.95rem;line-height:1.85}
+
+/* ════ CTA ════ */
+.cta-sec{
+  background:var(--ga);color:#fff;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-sec::before{
+  content:'';position:absolute;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(249,115,22,.4),transparent);
+  bottom:-250px;right:-150px;pointer-events:none;
+}
+.cta-sec::after{
+  content:'';position:absolute;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.1),transparent);
+  top:-120px;left:-80px;pointer-events:none;
+}
+.cta-sec .wrap{position:relative;z-index:1}
+.cta-sec h2{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:900;margin-bottom:18px;line-height:1.35}
+.cta-sec p{max-width:560px;margin:0 auto 38px;font-size:1.08rem;opacity:.92}
+
+/* ════ FOOTER ════ */
+footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;font-size:.9rem}
+.foot-top{
+  display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:28px;align-items:flex-start;
+  padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.foot-logo{
+  color:#fff;font-weight:900;font-size:1.08rem;
+  display:flex;align-items:center;gap:10px;margin-bottom:10px;
+}
+.foot-logo .mark{
+  width:34px;height:34px;border-radius:9px;
+  background:var(--ga);
+  display:grid;place-items:center;color:#fff;font-size:.92rem;font-weight:900;
+}
+.foot-desc{max-width:320px;line-height:1.8}
+.foot-links{display:flex;gap:32px;flex-wrap:wrap}
+.foot-links a:hover{color:#fff}
+.copy{margin-top:28px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.28)}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <span class="mark">HS</span>
+      ホームサクセスアカデミー
+    </div>
+    <nav class="nav-links">
+      <a href="#concept">講師・特長</a>
+      <a href="#skills">学べること</a>
+      <a href="#steps">学びの流れ</a>
+      <a href="#price">料金</a>
+      <a href="#cta" class="btn btn-pur">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="wrap hero-inner">
+    <div class="reveal">
+      <div class="hero-badges">
+        <span class="badge">🏠 完全在宅でOK</span>
+        <span class="badge">💼 現役フリーランス講師</span>
+        <span class="badge">🔰 初心者・未経験歓迎</span>
+      </div>
+      <h1>"稼げる"を、<br><span class="hl">現役プロから</span>学ぶ。</h1>
+      <p class="sub">教えるのが本業の先生ではなく、いま実際にWebで稼いでいるフリーランスが作った、「稼ぐこと」に特化したカリキュラム。子育ての合間に、本業のあとに、自分のペースで。</p>
+      <div class="hero-cta">
+        <a href="#cta" class="btn">無料説明会に申し込む</a>
+        <a href="#concept" class="btn btn-ghost-light">カリキュラムを見る</a>
+      </div>
+      <p class="hero-note">※ パソコンが苦手でも大丈夫。基礎の「キ」からサポートします。</p>
+    </div>
+    <div class="reveal d2">
+      <div class="ph hero-visual" data-label="① ヒーロー画像（hero.jpg）">
+        <img src="images/hero.jpg" alt="自宅でノートパソコンを開いて微笑む女性">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PAIN ══ -->
+<section class="section pain-sec">
+  <div class="wrap center reveal">
+    <span class="eyebrow">こんなお気持ち、ありませんか？</span>
+    <h2 class="title">「やってみたい」けど、<br>こんな不安で止まっていませんか</h2>
+  </div>
+  <div class="wrap pain-statement">
+    <div class="pain-item reveal d1">
+      <div class="pain-no">01</div>
+      <div class="pain-text">
+        <h3>何から始めればいいか分からない</h3>
+        <p>在宅ワークに興味はあるけど、パソコンも得意じゃない。「自分にできるかな」と思うと、なかなか踏み出せないまま。</p>
+      </div>
+    </div>
+    <div class="pain-item reveal d1">
+      <div class="pain-no">02</div>
+      <div class="pain-text">
+        <h3>スクールって高くない？元が取れるか不安</h3>
+        <p>払った分、ちゃんと回収できるのか。子育て中や副業の立ち上げ期に、大きなお金を出すのはリスクを感じる。</p>
+      </div>
+    </div>
+    <div class="pain-item reveal d1">
+      <div class="pain-no">03</div>
+      <div class="pain-text">
+        <h3>教材を買っても、結局使わないんじゃ…</h3>
+        <p>今まで買いっぱなしで終わったものが何個もある。学んでも稼げないまま終わるんじゃないかという不安。</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap reveal">
+    <div class="pain-close">
+      <p>その不安、ぜんぶ正直だと思います。<br>だから私たちは、<span class="acc">「稼げるかどうか」だけ</span>にこだわりました。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONCEPT / INSTRUCTOR ══ -->
+<section class="section inst-sec" id="concept">
+  <div class="wrap">
+    <div class="reveal center">
+      <span class="eyebrow">OUR CONCEPT</span>
+      <h2 class="title">"稼いでいる人"が作った、<br><span class="grad-text">"稼ぐため"のカリキュラム</span></h2>
+    </div>
+    <div class="inst-grid">
+      <div class="reveal">
+        <div class="ph inst-visual" data-label="③ 講師画像（instructor.jpg）">
+          <img src="images/instructor.jpg" alt="現役フリーランス講師">
+        </div>
+      </div>
+      <div class="inst-body reveal d2">
+        <p>多くのスクールの教材は「教えるのが上手な人」が作っています。でも、それで本当に稼げるとは限りません。</p>
+        <p>ホームサクセスアカデミーのカリキュラムは、<strong>いま現役でWebの仕事を受注し、収入を得ているフリーランス講師</strong>が作りました。</p>
+        <p>きれいごとではなく「実際に案件を取るには」「単価を上げるには」という、現場で通用するノウハウだけをお届けします。</p>
+        <div class="inst-pts">
+          <div class="inst-pt">
+            <span class="ic">💴</span>
+            <div>
+              <strong>稼ぐことに一点集中</strong>
+              <span>趣味で終わらせない。収入につなげる導線まで設計。</span>
+            </div>
+          </div>
+          <div class="inst-pt">
+            <span class="ic">🧑‍💻</span>
+            <div>
+              <strong>現役だから今の市場が分かる</strong>
+              <span>古い手法ではなく、今この瞬間に求められるスキルを。</span>
+            </div>
+          </div>
+          <div class="inst-pt">
+            <span class="ic">🤝</span>
+            <div>
+              <strong>受注までを伴走</strong>
+              <span>学んで終わりにしない。仕事の取り方までサポート。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section class="section skills-sec" id="skills">
+  <div class="wrap center reveal">
+    <span class="eyebrow">CURRICULUM</span>
+    <h2 class="title">在宅で稼げる、<span class="grad-text">4つのWebスキル</span></h2>
+    <p class="lead">需要が高く、在宅で仕事につなげやすいスキルを厳選。興味のある分野から、自分のペースで学べます。</p>
+  </div>
+  <div class="wrap skills-list">
+    <div class="skill-item reveal">
+      <div class="skill-num">01</div>
+      <div class="skill-content">
+        <h3><span class="emo">✍️</span>Webライティング</h3>
+        <p>文章を書く力をお金に変える。記事作成・SEO・セールス文章まで。道具がいらず、最初の一歩に最適です。</p>
+        <div class="tags">
+          <span class="tag">記事作成</span><span class="tag">SEOの基礎</span>
+          <span class="tag">セールスライティング</span><span class="tag">取材・構成</span>
+        </div>
+      </div>
+    </div>
+    <div class="skill-item reveal d1">
+      <div class="skill-num">02</div>
+      <div class="skill-content">
+        <h3><span class="emo">🎨</span>Webデザイン／制作</h3>
+        <p>バナー・LP・簡単なサイト制作まで。「伝わる」を形にする力。ツールの使い方からていねいに。</p>
+        <div class="tags">
+          <span class="tag">バナー制作</span><span class="tag">LP制作</span>
+          <span class="tag">Canva等のツール</span><span class="tag">ノーコード</span>
+        </div>
+      </div>
+    </div>
+    <div class="skill-item reveal d2">
+      <div class="skill-num">03</div>
+      <div class="skill-content">
+        <h3><span class="emo">📣</span>SNS運用・マーケ</h3>
+        <p>Instagram・Xの運用代行、集客の仕組みづくり。日常で使うSNSが、そのまま仕事になります。</p>
+        <div class="tags">
+          <span class="tag">Instagram運用</span><span class="tag">投稿づくり</span>
+          <span class="tag">集客の基礎</span><span class="tag">運用代行</span>
+        </div>
+      </div>
+    </div>
+    <div class="skill-item reveal d3">
+      <div class="skill-num">04</div>
+      <div class="skill-content">
+        <h3><span class="emo">🧭</span>ネット基礎・総合</h3>
+        <p>PC操作・便利ツール・在宅ワークの始め方まで。「そもそも」の不安を解消する、すべての土台。</p>
+        <div class="tags">
+          <span class="tag">PC・ツール基礎</span><span class="tag">在宅ワーク入門</span>
+          <span class="tag">仕事の受け方</span><span class="tag">セキュリティ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REASONS ══ -->
+<section class="section reasons-sec">
+  <div class="wrap center reveal">
+    <span class="eyebrow">WHY US</span>
+    <h2 class="title">ホームサクセスアカデミーが<br><span class="grad-text">選ばれる理由</span></h2>
+  </div>
+  <div class="wrap reasons-list">
+    <div class="reason-item reveal">
+      <div class="reason-ic">📖</div>
+      <div class="reason-body">
+        <h3>読んで分かるテキスト教材</h3>
+        <p>スキマ時間に読み進められるテキスト中心。あとから動画教材も追加予定です。</p>
+      </div>
+    </div>
+    <div class="reason-item reveal d1">
+      <div class="reason-ic">🐢</div>
+      <div class="reason-body">
+        <h3>初心者ファーストの設計</h3>
+        <p>専門用語をかみくだき、つまずきポイントを先回りでフォロー。置いていきません。</p>
+      </div>
+    </div>
+    <div class="reason-item reveal d2">
+      <div class="reason-ic">💬</div>
+      <div class="reason-body">
+        <h3>続けられるサポート体制</h3>
+        <p>質問できる環境と、同じ目標を持つ仲間。一人じゃないから走りきれます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STEPS ══ -->
+<section class="section steps-sec" id="steps">
+  <div class="wrap center reveal">
+    <span class="eyebrow eyebrow-ora">HOW IT WORKS</span>
+    <h2 class="title">学びの流れ</h2>
+    <p class="lead">申し込みから収入につながるまで、4ステップ。むずかしいことはありません。</p>
+  </div>
+  <div class="wrap">
+    <div class="steps-flow">
+      <div class="step-col reveal">
+        <div class="step-dot">1</div>
+        <h3>無料説明会</h3>
+        <p>まずは話を聞く。不安や疑問をその場で解消できます。</p>
+      </div>
+      <div class="step-col reveal d1">
+        <div class="step-dot">2</div>
+        <h3>入会・学習開始</h3>
+        <p>興味のある分野から、自分のペースでテキスト教材を学習。</p>
+      </div>
+      <div class="step-col reveal d2">
+        <div class="step-dot">3</div>
+        <h3>実践・添削</h3>
+        <p>手を動かして作品づくり。プロのフィードバックで成長。</p>
+      </div>
+      <div class="step-col reveal d3">
+        <div class="step-dot">4</div>
+        <h3>お仕事デビュー</h3>
+        <p>案件の探し方・受け方までサポート。在宅収入の第一歩へ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ══ -->
+<section class="section price-sec" id="price">
+  <div class="wrap center reveal">
+    <span class="eyebrow">PRICE</span>
+    <h2 class="title">料金プラン</h2>
+    <p class="lead">「高いんでしょ？」——だからこそ、回収できる学びを。まずは無料説明会で、あなたに合うプランをご提案します。</p>
+  </div>
+  <div class="wrap">
+    <div class="plans">
+      <div class="plan reveal">
+        <h3>お試しプラン</h3>
+        <p class="desc">まずは1分野だけ、気軽に始めたい方へ。</p>
+        <div class="price">¥XX,XXX<small> /一括</small></div>
+        <hr class="plan-divider">
+        <ul>
+          <li>選べる1スキルのテキスト教材</li>
+          <li>質問サポート（30日間）</li>
+          <li>学習コミュニティ参加</li>
+        </ul>
+        <a href="#cta" class="btn-outline">相談する</a>
+      </div>
+      <div class="plan pop reveal d1">
+        <h3>スタンダードプラン</h3>
+        <p class="desc">しっかり学んで、在宅収入を目指す方に一番人気。</p>
+        <div class="price">¥XX,XXX<small> /一括 or 分割</small></div>
+        <hr class="plan-divider">
+        <ul>
+          <li>全4スキルのテキスト教材</li>
+          <li>課題の添削・フィードバック</li>
+          <li>質問サポート（6ヶ月）</li>
+          <li>お仕事の受け方サポート</li>
+        </ul>
+        <a href="#cta" class="btn btn-pur" style="display:block;text-align:center">このプランで相談</a>
+      </div>
+      <div class="plan reveal d2">
+        <h3>サポート充実プラン</h3>
+        <p class="desc">最短で結果を出したい・本格的に独立したい方へ。</p>
+        <div class="price">¥XX,XXX<small> /一括 or 分割</small></div>
+        <hr class="plan-divider">
+        <ul>
+          <li>スタンダードの全内容</li>
+          <li>個別サポート・面談</li>
+          <li>案件紹介のサポート</li>
+          <li>無期限の教材アクセス</li>
+        </ul>
+        <a href="#cta" class="btn-outline">相談する</a>
+      </div>
+    </div>
+    <p class="price-note">※ 金額は仮の表示です。正式な価格・分割条件は確定後に反映します。</p>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section faq-sec">
+  <div class="wrap center reveal">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="title">よくあるご質問</h2>
+  </div>
+  <div class="wrap faq reveal">
+    <details open>
+      <summary>パソコンが苦手でも本当に大丈夫ですか？</summary>
+      <p>はい。電源の入れ方やファイル操作といった基礎から学べる「ネット基礎・総合」講座があります。つまずきやすいところを先回りでサポートするので、未経験の方こそ安心して始められます。</p>
+    </details>
+    <details>
+      <summary>スクールって高いイメージですが、元は取れますか？</summary>
+      <p>私たちは「稼げること」に特化しています。学んだスキルで案件を受注し、受講料以上の収入を目指せるよう、仕事の取り方までサポートします。まずは無料説明会で、回収イメージも含めてご相談ください。</p>
+    </details>
+    <details>
+      <summary>本当に在宅で稼げるようになりますか？</summary>
+      <p>学んで終わりではなく、お仕事の探し方・受け方まで現役講師が伴走します。収入には個人差がありますが、案件獲得までの道のりを一緒に進めます。</p>
+    </details>
+    <details>
+      <summary>講師はどんな人ですか？</summary>
+      <p>いま実際にWebの仕事で収入を得ている、現役のフリーランスです。現場で通用するノウハウを、等身大でお伝えします。</p>
+    </details>
+    <details>
+      <summary>忙しくて勉強時間がとれるか不安です。</summary>
+      <p>教材はテキスト中心なので、家事や仕事のスキマ時間に少しずつ進められます。1日15分からでもOKです。</p>
+    </details>
+    <details>
+      <summary>動画教材はありますか？</summary>
+      <p>現在はテキスト教材が中心です。今後、順次動画教材も追加していく予定です。</p>
+    </details>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="section cta-sec" id="cta">
+  <div class="wrap reveal">
+    <h2>「いつか」を「今日」に。<br>はじめの一歩を、ここから。</h2>
+    <p>まずは無料説明会で、あなたの「やってみたい」を聞かせてください。<br>しつこい勧誘はありません。安心してお申し込みください。</p>
+    <a href="#" class="btn btn-white">無料説明会に申し込む</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">
+          <span class="mark">HS</span>
+          ホームサクセスアカデミー
+        </div>
+        <p class="foot-desc">現役フリーランス講師から、稼ぐためのWebスキルを学べるオンラインスクールです。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#concept">講師・特長</a>
+        <a href="#skills">学べること</a>
+        <a href="#price">料金</a>
+        <a href="#cta">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 ホームサクセスアカデミー. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
