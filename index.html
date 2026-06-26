@@ -150,11 +150,31 @@ header{
 .hbtn-sub:hover{background:#fff;box-shadow:0 10px 28px rgba(0,0,0,.2);filter:none;transform:translateY(-3px)}
 
 /* SP版ヒーロー */
-.hero-mobile{
-  background:var(--ghost);
-  overflow:hidden;position:relative;
-  display:none;
+.hero-mobile{overflow:hidden;display:none}
+.hero-sp-wrap{position:relative;line-height:0}
+.hero-sp-wrap img{width:100%;display:block}
+.hero-sp-cta{
+  position:absolute;
+  left:6%;right:6%;
+  bottom:7%;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
+.sp-btn-main{
+  display:block;text-align:center;
+  font-size:1rem;padding:1em 0;
+  box-shadow:0 6px 22px rgba(249,115,22,.5);
+}
+.sp-btn-sub{
+  display:block;text-align:center;
+  font-size:1rem;padding:1em 0;
+  background:rgba(255,255,255,.88);
+  color:var(--dark2);
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+  border:1.5px solid rgba(0,0,0,.1);
+}
+.sp-btn-sub:hover{background:#fff;filter:none;box-shadow:0 8px 22px rgba(0,0,0,.18)}
 
 @media(min-width:861px){
   .hero-desktop{display:block}
@@ -661,24 +681,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
     </div>
   </div>
 
-  <!-- SP版：テキスト＋ダーク背景 -->
+  <!-- SP版：画像＋CTAオーバーレイ -->
   <div class="hero-mobile">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="wrap hero-inner">
-      <div class="reveal">
-        <div class="hero-badges">
-          <span class="badge">完全在宅でOK</span>
-          <span class="badge">現役フリーランス講師</span>
-          <span class="badge">初心者・未経験歓迎</span>
-        </div>
-        <h1>"稼げる"を、<br><span class="hl">現役プロから</span>学ぶ。</h1>
-        <p class="sub">教えるのが本業の先生ではなく、いま実際にWebで稼いでいるフリーランスが作った、「稼ぐこと」に特化したカリキュラム。子育ての合間に、本業のあとに、自分のペースで。</p>
-        <div class="hero-cta">
-          <a href="#cta" class="btn">LINEで無料相談する</a>
-          <a href="#concept" class="btn btn-ghost-light">カリキュラムを見る</a>
-        </div>
+    <div class="hero-sp-wrap">
+      <img src="images/hero-sp.png" alt="憧れの在宅ワークを、今日から現実に。">
+      <div class="hero-sp-cta">
+        <a href="#cta" class="btn sp-btn-main">LINEで無料相談する</a>
+        <a href="#concept" class="btn sp-btn-sub">カリキュラムを見る</a>
       </div>
     </div>
   </div>
