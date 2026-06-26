@@ -52,6 +52,29 @@ h2.title{font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.3;font-weight:900;ma
 .lead{color:var(--muted);font-size:1.05rem;max-width:660px}
 .center .lead{margin:0 auto}
 
+/* ─── セクション2カラムヘッダー ─── */
+.sec-head{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;align-items:center;
+  margin-bottom:56px;
+}
+.sec-head-text{display:flex;flex-direction:column;gap:16px}
+.sec-head-text .title{margin-bottom:0}
+.sec-head-img{
+  border-radius:20px;overflow:hidden;
+  aspect-ratio:4/3;
+  background:#f0eaff;
+  display:flex;align-items:center;justify-content:center;
+}
+.sec-head-img img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:860px){
+  .sec-head{grid-template-columns:1fr;gap:28px;margin-bottom:36px}
+  .sec-head-img{aspect-ratio:16/7;max-height:220px}
+}
+@media(max-width:680px){
+  .sec-head-img{display:none}
+}
+
 /* ─── Buttons ─── */
 .btn{
   display:inline-block;
@@ -546,6 +569,7 @@ header{
 }
 .steps-sec .title{color:#fff}
 .steps-sec .lead{color:rgba(255,255,255,.65)}
+.steps-sec .sec-head-img{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
 .steps-sec .eyebrow{background:var(--gb);-webkit-background-clip:text;background-clip:text}
 
 /* ── Timeline ── */
@@ -938,8 +962,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <section class="section inst-sec" id="concept">
   <div class="wrap">
 
-    <h2 class="title reveal">現役フリーランスが<br class="sp-br">監修した、<br><span class="grad-text">無駄ゼロのカリキュラム</span></h2>
-    <p class="concept-lead reveal">他のスクールと何が違うのか。２パターンを比べてみてください。</p>
+    <div class="sec-head reveal">
+      <div class="sec-head-text">
+        <h2 class="title">現役フリーランスが<br class="sp-br">監修した、<br><span class="grad-text">無駄ゼロのカリキュラム</span></h2>
+        <p class="concept-lead">他のスクールと何が違うのか。２パターンを比べてみてください。</p>
+      </div>
+      <div class="sec-head-img" data-sec="concept"></div>
+    </div>
 
     <!-- 2列フロー比較 -->
     <div class="compare-wrap reveal">
@@ -993,9 +1022,14 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 
 <!-- ══ SKILLS ══ -->
 <section class="section skills-sec" id="skills">
-  <div class="wrap center reveal">
-<h2 class="title">在宅で稼げる、<br class="sp-br"><span class="grad-text">4つのWebスキル</span></h2>
-    <p class="lead sp-hide">需要が高く、在宅で仕事につなげやすいスキルを厳選。興味のある分野から、自分のペースで学べます。</p>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head-text">
+        <h2 class="title">在宅で稼げる、<br class="sp-br"><span class="grad-text">4つのWebスキル</span></h2>
+        <p class="lead">需要が高く、在宅で仕事につなげやすいスキルを厳選。興味のある分野から、自分のペースで学べます。</p>
+      </div>
+      <div class="sec-head-img" data-sec="skills"></div>
+    </div>
   </div>
   <div class="wrap skills-list">
     <div class="skill-item reveal">
@@ -1047,8 +1081,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 
 <!-- ══ REASONS ══ -->
 <section class="section reasons-sec">
-  <div class="wrap center reveal">
-<h2 class="title">ホームサクセス<br class="sp-br">アカデミーが<br><span class="grad-text">選ばれる理由</span></h2>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head-text">
+        <h2 class="title">ホームサクセス<br class="sp-br">アカデミーが<br><span class="grad-text">選ばれる理由</span></h2>
+      </div>
+      <div class="sec-head-img" data-sec="reasons"></div>
+    </div>
   </div>
   <div class="wrap reasons-list">
     <div class="reason-item reveal">
@@ -1077,9 +1116,14 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 
 <!-- ══ STEPS ══ -->
 <section class="section steps-sec" id="steps">
-  <div class="wrap center reveal">
-<h2 class="title">学びの流れ</h2>
-    <p class="lead sp-hide">LINEで相談するところから始まります。ロードマップ作成まで、すべて無料。</p>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head-text">
+        <h2 class="title">学びの流れ</h2>
+        <p class="lead">LINEで相談するところから始まります。ロードマップ作成まで、すべて無料。</p>
+      </div>
+      <div class="sec-head-img" data-sec="steps"></div>
+    </div>
   </div>
   <div class="wrap">
     <div class="timeline">
@@ -1215,8 +1259,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 
 <!-- ══ FAQ ══ -->
 <section class="section faq-sec">
-  <div class="wrap center reveal">
-<h2 class="title">よくあるご質問</h2>
+  <div class="wrap reveal">
+    <h2 class="title">よくあるご質問</h2>
   </div>
   <div class="wrap faq reveal">
     <details open>
