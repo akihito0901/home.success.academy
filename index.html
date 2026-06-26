@@ -589,7 +589,22 @@ header{
 }
 
 /* ════ PRICING ════ */
-.price-sec{background:#fff}
+.price-sec{background:#f8f7ff}
+.price-coming{
+  margin-top:48px;
+  padding:56px 40px;
+  background:#fff;
+  border-radius:24px;
+  border:2px dashed #d4c8ff;
+  max-width:520px;margin-left:auto;margin-right:auto;
+  text-align:center;
+}
+.price-coming-icon{font-size:2.8rem;margin-bottom:20px;line-height:1}
+.price-coming-main{font-size:1.3rem;font-weight:900;color:#1a1a2e;margin-bottom:12px}
+.price-coming-sub{font-size:.92rem;color:#888;line-height:1.8;margin-bottom:28px}
+@media(max-width:680px){
+  .price-coming{padding:40px 24px}
+}
 .plans{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:24px;margin-top:56px;align-items:start;
@@ -1135,51 +1150,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <!-- ══ PRICING ══ -->
 <section class="section price-sec" id="price">
   <div class="wrap center reveal">
-<h2 class="title">料金プラン</h2>
-    <p class="lead sp-hide">「高いんでしょ？」——だからこそ、回収できる学びを。まずはLINEチャットで、あなたに合うプランをご提案します。</p>
-  </div>
-  <div class="wrap">
-    <div class="plans">
-      <div class="plan reveal">
-        <h3>お試しプラン</h3>
-        <p class="desc">まずは1分野だけ、気軽に始めたい方へ。</p>
-        <div class="price">¥XX,XXX<small> /一括</small></div>
-        <hr class="plan-divider">
-        <ul>
-          <li>選べる1スキルのテキスト教材</li>
-          <li>質問サポート（30日間）</li>
-          <li>学習コミュニティ参加</li>
-        </ul>
-        <a href="#cta" class="btn-outline">LINEで相談する</a>
-      </div>
-      <div class="plan pop reveal d1">
-        <h3>スタンダードプラン</h3>
-        <p class="desc">しっかり学んで、在宅収入を目指す方に一番人気。</p>
-        <div class="price">¥XX,XXX<small> /一括 or 分割</small></div>
-        <hr class="plan-divider">
-        <ul>
-          <li>全4スキルのテキスト教材</li>
-          <li>課題の添削・フィードバック</li>
-          <li>質問サポート（6ヶ月）</li>
-          <li>お仕事の受け方サポート</li>
-        </ul>
-        <a href="#cta" class="btn btn-pur" style="display:block;text-align:center">LINEでこのプランを相談</a>
-      </div>
-      <div class="plan reveal d2">
-        <h3>サポート充実プラン</h3>
-        <p class="desc">最短で結果を出したい・本格的に独立したい方へ。</p>
-        <div class="price">¥XX,XXX<small> /一括 or 分割</small></div>
-        <hr class="plan-divider">
-        <ul>
-          <li>スタンダードの全内容</li>
-          <li>個別サポート・面談</li>
-          <li>案件紹介のサポート</li>
-          <li>無期限の教材アクセス</li>
-        </ul>
-        <a href="#cta" class="btn-outline">LINEで相談する</a>
-      </div>
+    <h2 class="title">料金プラン</h2>
+    <div class="price-coming">
+      <div class="price-coming-icon">🔒</div>
+      <p class="price-coming-main">開校に合わせて公開予定</p>
+      <p class="price-coming-sub">現在プランを準備中です。詳細はLINEでお気軽にお問い合わせください。</p>
+      <a href="#cta" class="btn">LINEで詳細を聞く</a>
     </div>
-    <p class="price-note">※ 金額は仮の表示です。正式な価格・分割条件は確定後に反映します。</p>
   </div>
 </section>
 
