@@ -114,11 +114,51 @@ header{
 @media(max-width:860px){.nav-links a:not(.btn){display:none}}
 
 /* ════ HERO ════ */
-.hero{
+.hero{overflow:hidden;position:relative}
+
+/* PC版ヒーロー */
+.hero-desktop{background:#fff}
+.hero-img-wrap{position:relative;line-height:0}
+.hero-img-wrap img{width:100%;display:block}
+.hero-cta-pos{
+  position:absolute;
+  left:3.2%;
+  bottom:14.5%;
+  display:flex;
+  gap:1.6%;
+}
+.hbtn-main{
+  font-size:clamp(.7rem,1.15vw,.95rem);
+  padding:.85em 1.8em;
+  white-space:nowrap;
+}
+.hbtn-sub{
+  font-size:clamp(.7rem,1.15vw,.95rem);
+  padding:.85em 1.8em;
+  white-space:nowrap;
+  background:rgba(255,255,255,.92);
+  color:var(--dark2);
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+  border:1.5px solid #ddd;
+}
+.hbtn-sub:hover{background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.18);filter:none}
+
+/* SP版ヒーロー */
+.hero-mobile{
   background:var(--ghost);
   overflow:hidden;position:relative;
+  display:none;
 }
-.blob{
+
+@media(min-width:861px){
+  .hero-desktop{display:block}
+  .hero-mobile{display:none}
+}
+@media(max-width:860px){
+  .hero-desktop{display:none}
+  .hero-mobile{display:block}
+}
+.hero-mobile .blob{
   position:absolute;border-radius:50%;
   filter:blur(90px);pointer-events:none;
 }
@@ -526,30 +566,40 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 
 <!-- ══ HERO ══ -->
 <section class="hero">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-  <div class="wrap hero-inner">
-    <div class="reveal">
-      <div class="hero-badges">
-        <span class="badge">完全在宅でOK</span>
-        <span class="badge">現役フリーランス講師</span>
-        <span class="badge">初心者・未経験歓迎</span>
-      </div>
-      <h1>"稼げる"を、<br><span class="hl">現役プロから</span>学ぶ。</h1>
-      <p class="sub sp-hide">教えるのが本業の先生ではなく、いま実際にWebで稼いでいるフリーランスが作った、「稼ぐこと」に特化したカリキュラム。子育ての合間に、本業のあとに、自分のペースで。</p>
-      <div class="hero-cta">
-        <a href="#cta" class="btn">LINEで無料相談する</a>
-        <a href="#concept" class="btn btn-ghost-light">カリキュラムを見る</a>
-      </div>
-      <p class="hero-note sp-hide">※ パソコンが苦手でも大丈夫。基礎の「キ」からサポートします。</p>
-    </div>
-    <div class="reveal d2">
-      <div class="ph hero-visual" data-label="① ヒーロー画像（hero.jpg）">
-        <img src="images/hero.jpg" alt="自宅でノートパソコンを開いて微笑む女性">
+
+  <!-- PC版：画像＋ボタンオーバーレイ -->
+  <div class="hero-desktop reveal">
+    <div class="hero-img-wrap">
+      <img src="images/hero.png" alt="稼げるを、現役プロから学ぶ。ホームサクセスアカデミー">
+      <div class="hero-cta-pos">
+        <a href="#cta" class="btn hbtn-main">LINEで無料相談する</a>
+        <a href="#concept" class="btn hbtn-sub">カリキュラムを見る</a>
       </div>
     </div>
   </div>
+
+  <!-- SP版：テキスト＋ダーク背景 -->
+  <div class="hero-mobile">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="wrap hero-inner">
+      <div class="reveal">
+        <div class="hero-badges">
+          <span class="badge">完全在宅でOK</span>
+          <span class="badge">現役フリーランス講師</span>
+          <span class="badge">初心者・未経験歓迎</span>
+        </div>
+        <h1>"稼げる"を、<br><span class="hl">現役プロから</span>学ぶ。</h1>
+        <p class="sub">教えるのが本業の先生ではなく、いま実際にWebで稼いでいるフリーランスが作った、「稼ぐこと」に特化したカリキュラム。子育ての合間に、本業のあとに、自分のペースで。</p>
+        <div class="hero-cta">
+          <a href="#cta" class="btn">LINEで無料相談する</a>
+          <a href="#concept" class="btn btn-ghost-light">カリキュラムを見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ══ PAIN ══ -->
