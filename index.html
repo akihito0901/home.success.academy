@@ -689,10 +689,32 @@ header{
   max-width:340px;
 }
 .prof-sns-proof img{width:100%;display:block}
+.prof-sns-tag{font-size:.8rem;color:#aaa;font-weight:400}
+.prof-sp-head{display:none}
+
 @media(max-width:860px){
   .prof-inner{grid-template-columns:1fr;gap:32px}
   .prof-photo img{max-width:360px;margin:0 auto}
   .prof-name{font-size:1.8rem}
+}
+@media(max-width:680px){
+  .prof-photo{display:none}
+  .prof-pc-head{display:none}
+  .prof-sp-head{
+    display:flex;align-items:center;gap:16px;
+    margin-bottom:28px;padding-bottom:22px;
+    border-bottom:2px solid #f0eaff;
+  }
+  .prof-sp-head img{
+    width:72px;height:72px;flex-shrink:0;
+    border-radius:50%;object-fit:cover;object-position:top;
+    border:3px solid #ede9ff;
+    box-shadow:0 4px 14px rgba(124,58,237,.15);
+  }
+  .prof-sp-text .prof-label{font-size:.68rem;margin-bottom:4px}
+  .prof-sp-name{font-size:1.4rem;font-weight:900;color:#1a1a2e;margin-bottom:2px;line-height:1.2}
+  .prof-sp-sub{font-size:.78rem;color:#888;line-height:1.6}
+  .prof-sp-sub span{color:#b3a8d4;font-size:.72rem}
 }
 
 /* ════ FAQ ════ */
@@ -1184,13 +1206,26 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <section class="section prof-sec" id="instructor">
   <div class="wrap">
     <div class="prof-inner reveal">
+      <!-- PC・タブレット：大きい写真 -->
       <div class="prof-photo">
-        <img src="images/instructor.jpg" alt="あきひと先生">
+        <img src="images/instructor.jpg" alt="あきひと">
       </div>
       <div class="prof-body">
-        <p class="prof-label">講師プロフィール</p>
-        <h2 class="prof-name">Kent / ケント</h2>
-        <p class="prof-title">現役フリーランス / Webスクール講師</p>
+        <!-- PC・タブレット用ヘッダー -->
+        <div class="prof-pc-head">
+          <p class="prof-label">講師プロフィール</p>
+          <h2 class="prof-name">あきひと</h2>
+          <p class="prof-title">現役フリーランス / Webスクール講師<br><span class="prof-sns-tag">Instagram @kents_nft（ケント）</span></p>
+        </div>
+        <!-- SP用コンパクトヘッダー：小さいアバター＋名前横並び -->
+        <div class="prof-sp-head">
+          <img src="images/instructor.jpg" alt="あきひと">
+          <div class="prof-sp-text">
+            <p class="prof-label">講師プロフィール</p>
+            <p class="prof-sp-name">あきひと</p>
+            <p class="prof-sp-sub">現役フリーランス / Webスクール講師<br><span>@kents_nft（ケント）</span></p>
+          </div>
+        </div>
         <div class="prof-stats">
           <div class="prof-stat">
             <div class="ps-num">3.3<span>万</span></div>
