@@ -276,6 +276,59 @@ header{
 .inst-pt span{font-size:.9rem;color:var(--muted)}
 @media(max-width:860px){.inst-grid{grid-template-columns:1fr;gap:36px}}
 
+/* ── 2列フロー比較 ── */
+.compare-wrap{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:20px;margin-top:40px;
+}
+.compare-col{border-radius:20px;padding:30px 26px}
+.cmp-bad{background:#f2f2f2}
+.cmp-good{background:var(--ghost)}
+.cmp-head{
+  font-size:.95rem;font-weight:900;
+  margin-bottom:26px;padding-bottom:14px;
+  border-bottom:2px solid rgba(0,0,0,.07);
+  color:#888;
+}
+.cmp-good .cmp-head{
+  color:rgba(255,255,255,.5);
+  border-bottom-color:rgba(255,255,255,.12);
+}
+.cmp-step{display:flex;gap:14px;align-items:flex-start}
+.cmp-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.cmp-dot{
+  width:36px;height:36px;border-radius:50%;
+  background:#d4d4d4;color:#aaa;
+  font-size:.85rem;font-weight:900;
+  display:grid;place-items:center;flex-shrink:0;
+}
+.cmp-g1{background:var(--gb);color:#fff;box-shadow:0 4px 14px rgba(249,115,22,.4)}
+.cmp-g2{background:var(--ga);color:#fff;box-shadow:0 4px 14px rgba(124,58,237,.4)}
+.cmp-g3{background:var(--gc);color:#fff;box-shadow:0 4px 14px rgba(6,182,212,.4)}
+.cmp-g4{background:linear-gradient(135deg,#10b981,#3b82f6);color:#fff;box-shadow:0 4px 14px rgba(16,185,129,.4)}
+.cmp-line{width:2px;flex:1;min-height:28px;margin:4px 0;background:#e0e0e0}
+.cmp-gline{background:rgba(255,255,255,.15)}
+.cmp-body{
+  padding-bottom:24px;
+  font-size:.93rem;line-height:1.7;color:#999;font-weight:600;
+}
+.cmp-gbody{color:rgba(255,255,255,.8)}
+.cmp-last .cmp-body{padding-bottom:0}
+.cmp-bad-end{
+  font-size:1.05rem;font-weight:900;color:#c0392b;
+  background:#fef2f2;border-radius:10px;
+  padding:10px 14px;margin-top:2px;
+}
+.cmp-good-end{
+  font-size:1.05rem;font-weight:900;color:#fff;
+  background:rgba(255,255,255,.12);border-radius:10px;
+  padding:10px 14px;margin-top:2px;
+}
+.cmp-end{background:#e8b4b4;color:#c0392b}
+@media(max-width:680px){
+  .compare-wrap{grid-template-columns:1fr}
+}
+
 /* ── Concept redesign ── */
 .concept-header{
   display:flex;align-items:flex-start;
@@ -697,8 +750,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <!-- ══ PAIN ══ -->
 <section class="section pain-sec">
   <div class="wrap center reveal">
-    <span class="eyebrow">こんなお気持ち、ありませんか？</span>
-    <h2 class="title">「やってみたい」けど、<br>こんな不安で止まっていませんか？</h2>
+<h2 class="title">「やってみたい」けど、<br>こんな不安で止まっていませんか？</h2>
   </div>
   <div class="wrap pain-statement">
     <div class="pain-item reveal d1">
@@ -737,8 +789,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
     <!-- タイトル＋講師写真 -->
     <div class="concept-header reveal">
       <div>
-        <span class="eyebrow">OUR CONCEPT</span>
-        <h2 class="title">現役フリーランスが監修した、<br><span class="grad-text">無駄ゼロのカリキュラム</span></h2>
+    <h2 class="title">現役フリーランスが監修した、<br><span class="grad-text">無駄ゼロのカリキュラム</span></h2>
         <p class="concept-lead">実際に稼いでいる現役フリーランスが自ら設計。その人に合った必要なスキルだけを、今のトレンドで届けます。</p>
       </div>
       <div class="concept-portrait ph" data-label="講師写真">
@@ -746,39 +797,51 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
       </div>
     </div>
 
-    <!-- 比較図 -->
-    <div class="vs-wrap reveal">
-      <div class="vs-bad">
-        <p class="vs-head">よくあるスクール</p>
-        <div class="vs-row">
-          <span class="vs-x">✗</span>
-          <div><strong>教えることが仕事の人が設計</strong><br><span>稼げることとは別の話。的外れな教材が生まれやすい。</span></div>
+    <!-- 2列フロー比較 -->
+    <div class="compare-wrap reveal">
+
+      <!-- 左：挫折パターン -->
+      <div class="compare-col cmp-bad">
+        <div class="cmp-head">よくある挫折パターン</div>
+        <div class="cmp-step">
+          <div class="cmp-left"><div class="cmp-dot">1</div><div class="cmp-line"></div></div>
+          <div class="cmp-body">高額スクールに<br>とりあえず入会</div>
         </div>
-        <div class="vs-row">
-          <span class="vs-x">✗</span>
-          <div><strong>古い・的外れな内容が多い</strong><br><span>市場の変化に追いつけず、今は通用しないスキルを教えている。</span></div>
+        <div class="cmp-step">
+          <div class="cmp-left"><div class="cmp-dot">2</div><div class="cmp-line"></div></div>
+          <div class="cmp-body">的外れな教材を<br>ひたすら学ばされる</div>
         </div>
-        <div class="vs-row">
-          <span class="vs-x">✗</span>
-          <div><strong>AIで代替できる作業を教える</strong><br><span>今やAIが一瞬でこなせることを、時間をかけて学んでいる。</span></div>
+        <div class="cmp-step">
+          <div class="cmp-left"><div class="cmp-dot">3</div><div class="cmp-line"></div></div>
+          <div class="cmp-body">成果が出ない<br>モチベーションが低下</div>
         </div>
-      </div>
-      <div class="vs-center">VS</div>
-      <div class="vs-good">
-        <p class="vs-head">ホームサクセスアカデミー</p>
-        <div class="vs-row">
-          <span class="vs-check">✓</span>
-          <div><strong>現役フリーランスが自ら監修・設計</strong><br><span>実際に稼いでいるから、本当に必要なことだけに絞れる。</span></div>
-        </div>
-        <div class="vs-row">
-          <span class="vs-check">✓</span>
-          <div><strong>今のトレンドをリアルタイム反映</strong><br><span>市場の流れを常にキャッチ。今この瞬間に通用するスキルを。</span></div>
-        </div>
-        <div class="vs-row">
-          <span class="vs-check">✓</span>
-          <div><strong>AIを武器にする使い方を学ぶ</strong><br><span>AIを恐れるのではなく、使いこなす側になる。それが最速の近道。</span></div>
+        <div class="cmp-step cmp-last">
+          <div class="cmp-left"><div class="cmp-dot cmp-end">4</div></div>
+          <div class="cmp-body cmp-bad-end">挫折・退会</div>
         </div>
       </div>
+
+      <!-- 右：HSAパターン -->
+      <div class="compare-col cmp-good">
+        <div class="cmp-head">ここなら挫折しない</div>
+        <div class="cmp-step">
+          <div class="cmp-left"><div class="cmp-dot cmp-g1">1</div><div class="cmp-line cmp-gline"></div></div>
+          <div class="cmp-body cmp-gbody">LINEで<br>気軽に無料相談</div>
+        </div>
+        <div class="cmp-step">
+          <div class="cmp-left"><div class="cmp-dot cmp-g2">2</div><div class="cmp-line cmp-gline"></div></div>
+          <div class="cmp-body cmp-gbody">個別ロードマップを<br>一緒に設計</div>
+        </div>
+        <div class="cmp-step">
+          <div class="cmp-left"><div class="cmp-dot cmp-g3">3</div><div class="cmp-line cmp-gline"></div></div>
+          <div class="cmp-body cmp-gbody">必要なスキルだけ<br>集中して学ぶ</div>
+        </div>
+        <div class="cmp-step cmp-last">
+          <div class="cmp-left"><div class="cmp-dot cmp-g4">4</div></div>
+          <div class="cmp-body cmp-gbody cmp-good-end">成果が出て<br>稼ぎ続けられる</div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -787,8 +850,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <!-- ══ SKILLS ══ -->
 <section class="section skills-sec" id="skills">
   <div class="wrap center reveal">
-    <span class="eyebrow">CURRICULUM</span>
-    <h2 class="title">在宅で稼げる、<span class="grad-text">4つのWebスキル</span></h2>
+<h2 class="title">在宅で稼げる、<span class="grad-text">4つのWebスキル</span></h2>
     <p class="lead sp-hide">需要が高く、在宅で仕事につなげやすいスキルを厳選。興味のある分野から、自分のペースで学べます。</p>
   </div>
   <div class="wrap skills-list">
@@ -842,8 +904,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <!-- ══ REASONS ══ -->
 <section class="section reasons-sec">
   <div class="wrap center reveal">
-    <span class="eyebrow">WHY US</span>
-    <h2 class="title">ホームサクセスアカデミーが<br><span class="grad-text">選ばれる理由</span></h2>
+<h2 class="title">ホームサクセスアカデミーが<br><span class="grad-text">選ばれる理由</span></h2>
   </div>
   <div class="wrap reasons-list">
     <div class="reason-item reveal">
@@ -873,8 +934,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <!-- ══ STEPS ══ -->
 <section class="section steps-sec" id="steps">
   <div class="wrap center reveal">
-    <span class="eyebrow eyebrow-ora">HOW IT WORKS</span>
-    <h2 class="title">学びの流れ</h2>
+<h2 class="title">学びの流れ</h2>
     <p class="lead sp-hide">LINEで相談するところから始まります。ロードマップ作成まで、すべて無料。</p>
   </div>
   <div class="wrap">
@@ -946,8 +1006,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <!-- ══ PRICING ══ -->
 <section class="section price-sec" id="price">
   <div class="wrap center reveal">
-    <span class="eyebrow">PRICE</span>
-    <h2 class="title">料金プラン</h2>
+<h2 class="title">料金プラン</h2>
     <p class="lead sp-hide">「高いんでしょ？」——だからこそ、回収できる学びを。まずはLINEチャットで、あなたに合うプランをご提案します。</p>
   </div>
   <div class="wrap">
@@ -998,8 +1057,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <!-- ══ FAQ ══ -->
 <section class="section faq-sec">
   <div class="wrap center reveal">
-    <span class="eyebrow">FAQ</span>
-    <h2 class="title">よくあるご質問</h2>
+<h2 class="title">よくあるご質問</h2>
   </div>
   <div class="wrap faq reveal">
     <details open>
