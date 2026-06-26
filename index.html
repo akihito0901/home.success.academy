@@ -100,21 +100,17 @@ h2.title{font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.3;font-weight:900;ma
 /* ════ HEADER ════ */
 header{
   position:sticky;top:0;z-index:100;
-  background:rgba(15,14,23,.88);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #ece8e3;
+  box-shadow:0 2px 14px rgba(0,0,0,.05);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:#fff;font-size:1.05rem}
-.logo .mark{
-  width:36px;height:36px;border-radius:10px;
-  background:var(--ga);
-  display:grid;place-items:center;color:#fff;font-size:.95rem;font-weight:900;
-  box-shadow:0 4px 14px rgba(124,58,237,.5);
-}
-.nav-links{display:flex;gap:26px;align-items:center;font-size:.9rem;font-weight:700;color:rgba(255,255,255,.75)}
-.nav-links a:not(.btn):hover{color:#fff}
-.nav .btn{padding:10px 22px;font-size:.88rem}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center}
+.logo img{height:46px;width:auto}
+.nav-links{display:flex;gap:26px;align-items:center;font-size:.9rem;font-weight:700;color:#444}
+.nav-links a:not(.btn):hover{color:#1a1a2e}
+.nav .btn{padding:12px 26px;font-size:.9rem}
 @media(max-width:860px){.nav-links a:not(.btn){display:none}}
 
 /* ════ HERO ════ */
@@ -206,7 +202,10 @@ header{
   padding:22px 0;border-bottom:1px solid #e8e4ff;
 }
 .inst-pt:first-child{border-top:1px solid #e8e4ff}
-.inst-pt .ic{font-size:1.6rem;flex-shrink:0;margin-top:2px}
+.inst-pt .ic{
+  width:4px;min-height:48px;border-radius:4px;flex-shrink:0;
+  background:var(--gb);
+}
 .inst-pt strong{display:block;font-size:1rem;color:#1a1a2e;margin-bottom:4px}
 .inst-pt span{font-size:.9rem;color:var(--muted)}
 @media(max-width:860px){.inst-grid{grid-template-columns:1fr;gap:36px}}
@@ -258,9 +257,9 @@ header{
 }
 .reason-item:first-child{border-top:1px solid #e8e4ff}
 .reason-ic{
-  font-size:2.4rem;flex-shrink:0;
-  width:64px;height:64px;display:grid;place-items:center;
-  border-radius:18px;
+  font-size:.8rem;font-weight:900;letter-spacing:.06em;flex-shrink:0;
+  width:56px;height:56px;display:grid;place-items:center;
+  border-radius:16px;color:#fff;
 }
 .reason-item:nth-child(1) .reason-ic{background:linear-gradient(135deg,#7c3aed,#3b82f6)}
 .reason-item:nth-child(2) .reason-ic{background:linear-gradient(135deg,#f97316,#ec4899)}
@@ -449,9 +448,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 
   /* Header */
   .nav{height:60px}
-  .logo{font-size:.95rem}
-  .logo .mark{width:30px;height:30px;font-size:.82rem}
-  .nav .btn{padding:8px 16px;font-size:.82rem}
+  .logo img{height:34px}
+  .nav .btn{padding:9px 16px;font-size:.82rem}
 
   /* Hero */
   .hero-inner{padding:52px 0 64px;gap:28px}
@@ -470,7 +468,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 
   /* Inst */
   .inst-pt{padding:18px 0}
-  .inst-pt .ic{font-size:1.3rem}
+  .inst-pt .ic{min-height:36px}
   .inst-pt strong{font-size:.95rem}
 
   /* Skills */
@@ -514,15 +512,14 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <header>
   <div class="wrap nav">
     <div class="logo">
-      <span class="mark">HS</span>
-      ホームサクセスアカデミー
+      <img src="images/logo.png" alt="Home Success Academy">
     </div>
     <nav class="nav-links">
       <a href="#concept">講師・特長</a>
       <a href="#skills">学べること</a>
       <a href="#steps">学びの流れ</a>
       <a href="#price">料金</a>
-      <a href="#cta" class="btn btn-pur">LINEで相談する</a>
+      <a href="#cta" class="btn btn-pur">無料相談する</a>
     </nav>
   </div>
 </header>
@@ -535,9 +532,9 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
   <div class="wrap hero-inner">
     <div class="reveal">
       <div class="hero-badges">
-        <span class="badge">🏠 完全在宅でOK</span>
-        <span class="badge">💼 現役フリーランス講師</span>
-        <span class="badge">🔰 初心者・未経験歓迎</span>
+        <span class="badge">完全在宅でOK</span>
+        <span class="badge">現役フリーランス講師</span>
+        <span class="badge">初心者・未経験歓迎</span>
       </div>
       <h1>"稼げる"を、<br><span class="hl">現役プロから</span>学ぶ。</h1>
       <p class="sub sp-hide">教えるのが本業の先生ではなく、いま実際にWebで稼いでいるフリーランスが作った、「稼ぐこと」に特化したカリキュラム。子育ての合間に、本業のあとに、自分のペースで。</p>
@@ -610,21 +607,21 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
         <p class="sp-hide">きれいごとではなく「実際に案件を取るには」「単価を上げるには」という、現場で通用するノウハウだけをお届けします。</p>
         <div class="inst-pts">
           <div class="inst-pt">
-            <span class="ic">💴</span>
+            <span class="ic"></span>
             <div>
               <strong>稼ぐことに一点集中</strong>
               <span>趣味で終わらせない。収入につなげる導線まで設計。</span>
             </div>
           </div>
           <div class="inst-pt">
-            <span class="ic">🧑‍💻</span>
+            <span class="ic"></span>
             <div>
               <strong>現役だから今の市場が分かる</strong>
               <span>古い手法ではなく、今この瞬間に求められるスキルを。</span>
             </div>
           </div>
           <div class="inst-pt">
-            <span class="ic">🤝</span>
+            <span class="ic"></span>
             <div>
               <strong>受注までを伴走</strong>
               <span>学んで終わりにしない。仕事の取り方までサポート。</span>
@@ -647,7 +644,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
     <div class="skill-item reveal">
       <div class="skill-num">01</div>
       <div class="skill-content">
-        <h3><span class="emo">✍️</span>Webライティング</h3>
+        <h3>Webライティング</h3>
         <p class="sp-hide">文章を書く力をお金に変える。記事作成・SEO・セールス文章まで。道具がいらず、最初の一歩に最適です。</p>
         <div class="tags">
           <span class="tag">記事作成</span><span class="tag">SEOの基礎</span>
@@ -658,7 +655,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
     <div class="skill-item reveal d1">
       <div class="skill-num">02</div>
       <div class="skill-content">
-        <h3><span class="emo">🎨</span>Webデザイン／制作</h3>
+        <h3>Webデザイン／制作</h3>
         <p class="sp-hide">バナー・LP・簡単なサイト制作まで。「伝わる」を形にする力。ツールの使い方からていねいに。</p>
         <div class="tags">
           <span class="tag">バナー制作</span><span class="tag">LP制作</span>
@@ -669,7 +666,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
     <div class="skill-item reveal d2">
       <div class="skill-num">03</div>
       <div class="skill-content">
-        <h3><span class="emo">📣</span>SNS運用・マーケ</h3>
+        <h3>SNS運用・マーケ</h3>
         <p class="sp-hide">Instagram・Xの運用代行、集客の仕組みづくり。日常で使うSNSが、そのまま仕事になります。</p>
         <div class="tags">
           <span class="tag">Instagram運用</span><span class="tag">投稿づくり</span>
@@ -680,7 +677,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
     <div class="skill-item reveal d3">
       <div class="skill-num">04</div>
       <div class="skill-content">
-        <h3><span class="emo">🧭</span>ネット基礎・総合</h3>
+        <h3>ネット基礎・総合</h3>
         <p class="sp-hide">PC操作・便利ツール・在宅ワークの始め方まで。「そもそも」の不安を解消する、すべての土台。</p>
         <div class="tags">
           <span class="tag">PC・ツール基礎</span><span class="tag">在宅ワーク入門</span>
@@ -699,21 +696,21 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
   </div>
   <div class="wrap reasons-list">
     <div class="reason-item reveal">
-      <div class="reason-ic">📖</div>
+      <div class="reason-ic">01</div>
       <div class="reason-body">
         <h3>読んで分かるテキスト教材</h3>
         <p>スキマ時間に読み進められるテキスト中心。あとから動画教材も追加予定です。</p>
       </div>
     </div>
     <div class="reason-item reveal d1">
-      <div class="reason-ic">🐢</div>
+      <div class="reason-ic">02</div>
       <div class="reason-body">
         <h3>初心者ファーストの設計</h3>
         <p>専門用語をかみくだき、つまずきポイントを先回りでフォロー。置いていきません。</p>
       </div>
     </div>
     <div class="reason-item reveal d2">
-      <div class="reason-ic">💬</div>
+      <div class="reason-ic">03</div>
       <div class="reason-body">
         <h3>続けられるサポート体制</h3>
         <p>質問できる環境と、同じ目標を持つ仲間。一人じゃないから走りきれます。</p>
@@ -860,8 +857,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
     <div class="foot-top">
       <div>
         <div class="foot-logo">
-          <span class="mark">HS</span>
-          ホームサクセスアカデミー
+          <img src="images/logo.png" alt="Home Success Academy" style="height:38px;width:auto;filter:brightness(0) invert(1)">
         </div>
         <p class="foot-desc">現役フリーランス講師から、稼ぐためのWebスキルを学べるオンラインスクールです。</p>
       </div>
