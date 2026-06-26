@@ -610,8 +610,8 @@ header{
   gap:64px;align-items:flex-start;
 }
 .prof-photo img{
-  width:100%;border-radius:20px;
-  object-fit:cover;aspect-ratio:3/4;
+  width:100%;height:auto;display:block;
+  border-radius:20px;
   box-shadow:0 16px 48px rgba(0,0,0,.1);
 }
 .prof-label{
@@ -659,7 +659,7 @@ header{
 .prof-sns-proof img{width:100%;display:block}
 @media(max-width:860px){
   .prof-inner{grid-template-columns:1fr;gap:32px}
-  .prof-photo img{aspect-ratio:4/3;max-height:300px;object-position:top}
+  .prof-photo img{max-width:360px;margin:0 auto}
   .prof-name{font-size:1.8rem}
 }
 
