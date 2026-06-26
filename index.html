@@ -249,8 +249,14 @@ header{
 
 /* ════ PAIN ════ */
 .pain-sec{background:#fff;padding:0}
-.pain-img-wrap{max-width:640px;margin:0 auto}
+.pain-img-wrap{margin:0 auto}
 .pain-img-wrap img{width:100%;display:block}
+.pain-sp{display:none}
+@media(max-width:680px){
+  .pain-pc{display:none}
+  .pain-sp{display:block}
+  .pain-img-wrap{max-width:640px}
+}
 .pain-statement{margin-top:60px}
 .pain-item{
   padding:40px 0;border-bottom:1px solid var(--line);
@@ -908,7 +914,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <!-- ══ PAIN ══ -->
 <section class="section pain-sec">
   <div class="pain-img-wrap reveal">
-    <img src="images/pain.png" alt="やってみたいけど、こんな不安で止まっていませんか？">
+    <img class="pain-pc" src="images/pain-pc.png" alt="やってみたいけど、こんな不安で止まっていませんか？">
+    <img class="pain-sp" src="images/pain.png" alt="やってみたいけど、こんな不安で止まっていませんか？">
   </div>
 </section>
 
