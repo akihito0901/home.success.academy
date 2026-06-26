@@ -744,12 +744,16 @@ header{
   background:var(--ga);display:inline-block;
 }
 .prof-sns-proof{
-  margin-top:24px;
+  margin-top:20px;
+  margin-bottom:28px;
   border-radius:12px;overflow:hidden;
   box-shadow:0 4px 20px rgba(0,0,0,.12);
-  max-width:340px;
+  max-width:300px;
 }
 .prof-sns-proof img{width:100%;display:block}
+@media(max-width:680px){
+  .prof-sns-proof{max-width:100%}
+}
 .prof-sns-tag{font-size:.8rem;color:#aaa;font-weight:400}
 .prof-sp-head{display:none}
 
@@ -1246,6 +1250,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
             <p class="prof-sp-sub">現役フリーランス / Webスクール講師<br><span>@kents_nft（ケント）</span></p>
           </div>
         </div>
+        <!-- 名前直下にインスタスクショ -->
+        <div class="prof-sns-proof">
+          <img src="images/insta-proof.png" alt="Instagram kents_nft フォロワー3.3万">
+        </div>
         <div class="prof-stats">
           <div class="prof-stat">
             <div class="ps-num">3.3<span>万</span></div>
@@ -1267,9 +1275,6 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
           <li>Instagram / TikTok ショート動画運用</li>
           <li>広告（Meta・Google）の実運用経験あり</li>
         </ul>
-        <div class="prof-sns-proof">
-          <img src="images/insta-proof.png" alt="Instagram kents_nft フォロワー3.3万">
-        </div>
       </div>
     </div>
   </div>
