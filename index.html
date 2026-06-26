@@ -107,10 +107,10 @@ header{
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{display:flex;align-items:center}
-.logo img{height:46px;width:auto}
-.nav-links{display:flex;gap:26px;align-items:center;font-size:.9rem;font-weight:700;color:#444}
+.logo img{height:58px;width:auto}
+.nav-links{display:flex;gap:28px;align-items:center;font-size:1rem;font-weight:700;color:#333}
 .nav-links a:not(.btn):hover{color:#1a1a2e}
-.nav .btn{padding:12px 26px;font-size:.9rem}
+.nav .btn{padding:13px 30px;font-size:1rem}
 @media(max-width:860px){.nav-links a:not(.btn){display:none}}
 
 /* ════ HERO ════ */
@@ -123,24 +123,24 @@ header{
 .hero-cta-pos{
   position:absolute;
   left:3.5%;
-  bottom:14%;
+  bottom:5%;
   display:flex;
   gap:2%;
-  width:48%;
+  width:54%;
 }
 .hbtn-main{
   flex:1;
   text-align:center;
-  font-size:clamp(1rem,1.9vw,1.35rem);
-  padding:1.45em 0;
+  font-size:clamp(1.05rem,2.2vw,1.55rem);
+  padding:1.6em 0;
   white-space:nowrap;
   box-shadow:0 8px 28px rgba(249,115,22,.55);
 }
 .hbtn-sub{
   flex:1;
   text-align:center;
-  font-size:clamp(1rem,1.9vw,1.35rem);
-  padding:1.1em 0;
+  font-size:clamp(1.05rem,2.2vw,1.55rem);
+  padding:1.6em 0;
   white-space:nowrap;
   background:rgba(255,255,255,.9);
   color:var(--dark2);
@@ -327,6 +327,43 @@ header{
 .cmp-end{background:#e8b4b4;color:#c0392b}
 @media(max-width:680px){
   .compare-wrap{grid-template-columns:1fr}
+}
+
+/* ── 講師プロフィールカード ── */
+.instructor-card{
+  display:grid;grid-template-columns:280px 1fr;
+  gap:48px;align-items:center;
+  margin-top:48px;margin-bottom:8px;
+  background:#fff;border-radius:24px;
+  box-shadow:0 12px 48px rgba(124,58,237,.1);
+  overflow:hidden;
+}
+.ic-photo{line-height:0;height:100%;min-height:300px}
+.ic-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.ic-info{padding:36px 40px 36px 0}
+.ic-role{font-size:.8rem;font-weight:700;color:var(--pur);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.ic-stats{display:flex;gap:20px;margin-bottom:20px}
+.ic-stat{text-align:center;background:#f8f7ff;border-radius:12px;padding:12px 18px}
+.ic-num{font-size:1.6rem;font-weight:900;background:var(--ga);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
+.ic-num span{font-size:.9rem}
+.ic-label{font-size:.72rem;color:#888;font-weight:700;margin-top:4px}
+.ic-stat-yr .ic-num{background:var(--gb);-webkit-background-clip:text;background-clip:text}
+.ic-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.ic-tags span{
+  background:#f0eaff;color:var(--pur);
+  font-size:.78rem;font-weight:700;
+  border-radius:20px;padding:5px 14px;
+}
+.ic-desc{font-size:.9rem;color:#555;line-height:1.85}
+@media(max-width:860px){
+  .instructor-card{grid-template-columns:1fr}
+  .ic-photo{min-height:240px}
+  .ic-info{padding:24px}
+  .ic-stats{gap:12px}
+  .ic-stat{padding:10px 14px}
+}
+@media(max-width:480px){
+  .ic-stats{flex-wrap:wrap}
 }
 
 /* ── Concept redesign ── */
@@ -644,7 +681,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 
   /* Header */
   .nav{height:60px}
-  .logo img{height:34px}
+  .logo img{height:42px}
   .nav .btn{padding:9px 16px;font-size:.82rem}
 
   /* Hero */
@@ -786,14 +823,38 @@ footer{background:var(--dark);color:rgba(255,255,255,.45);padding:60px 0 36px;fo
 <section class="section inst-sec" id="concept">
   <div class="wrap">
 
-    <!-- タイトル＋講師写真 -->
-    <div class="concept-header reveal">
-      <div>
-    <h2 class="title">現役フリーランスが監修した、<br><span class="grad-text">無駄ゼロのカリキュラム</span></h2>
-        <p class="concept-lead">実際に稼いでいる現役フリーランスが自ら設計。その人に合った必要なスキルだけを、今のトレンドで届けます。</p>
-      </div>
-      <div class="concept-portrait ph" data-label="講師写真">
+    <h2 class="title reveal">現役フリーランスが監修した、<br><span class="grad-text">無駄ゼロのカリキュラム</span></h2>
+
+    <!-- 講師プロフィール -->
+    <div class="instructor-card reveal">
+      <div class="ic-photo">
         <img src="images/instructor.jpg" alt="講師">
+      </div>
+      <div class="ic-info">
+        <p class="ic-role">現役フリーランス講師 / フリーランス歴3年</p>
+        <div class="ic-stats">
+          <div class="ic-stat">
+            <div class="ic-num">3<span>万</span></div>
+            <div class="ic-label">Instagram</div>
+          </div>
+          <div class="ic-stat">
+            <div class="ic-num">2.5<span>万</span></div>
+            <div class="ic-label">TikTok</div>
+          </div>
+          <div class="ic-stat ic-stat-yr">
+            <div class="ic-num">3<span>年</span></div>
+            <div class="ic-label">フリーランス歴</div>
+          </div>
+        </div>
+        <div class="ic-tags">
+          <span>Webスクール講師</span>
+          <span>SNS運用代行</span>
+          <span>広告運用代行</span>
+          <span>HP制作</span>
+          <span>デザイン</span>
+          <span>ショート動画</span>
+        </div>
+        <p class="ic-desc">実際に稼いでいる現役フリーランスが、本当に必要なスキルだけを届けます。教えることが仕事の先生ではなく、今も現場で動いている人間が設計したカリキュラムだから、無駄がありません。</p>
       </div>
     </div>
 
